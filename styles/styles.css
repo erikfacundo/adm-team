@@ -135,3 +135,61 @@ h1{
     color: #fff;
     text-align: center;
 }
+
+/* Estilos para las secciones */
+.section {
+    min-height: 100vh; /* Usamos min-height para asegurarnos de que el contenido no se desborde en pantallas pequeñas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Establece un tamaño máximo para las imágenes dentro de las secciones */
+.image-content img {
+    max-width: 100%; /* Asegura que las imágenes no se salgan de su contenedor */
+    height: auto;
+}
+
+/* Haz que los contenidos sticky ocupen el 100% del ancho en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sticky-content,
+    .image-content {
+        width: 100%;
+    }
+}
+
+/* Ajusta el tamaño de la fuente para pantallas pequeñas */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 768px) {
+    .sticky-section {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    }
+    .sticky-content,
+    .image-content {
+        width: 100%; /* Asegura que ocupen todo el ancho de la pantalla */
+    }
+}
+/* Establece la disposición de las secciones para que estén una debajo de la otra en dispositivos pequeños */
+@media (max-width: 768px) {
+    .sticky-section {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    }
+    .sticky-content,
+    .image-content {
+        width: 100%; /* Asegura que ocupen todo el ancho de la pantalla */
+    }
+}
+
+/* Cambia el orden de las imágenes para que se muestren después de las secciones en dispositivos pequeños */
+@media (max-width: 768px) {
+    .sticky-section .image-content {
+        order: 1; /* Cambia el orden de aparición de las imágenes */
+    }
+}
