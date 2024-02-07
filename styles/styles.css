@@ -136,6 +136,7 @@ h1{
     text-align: center;
 }
 
+
 /* Estilos para las secciones */
 .section {
     min-height: 100vh; /* Usamos min-height para asegurarnos de que el contenido no se desborde en pantallas pequeñas */
