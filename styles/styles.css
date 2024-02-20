@@ -1,44 +1,25 @@
-@font-face {
-	font-family: 'proxima_nova_rgregular';
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'proxima_nova_rgbold';
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@font-face {
-	font-family: 'adelle_rgregular';
-	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/adelle_reg-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/adelle_reg-webfont.svg#adelle_rgregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+
 *{
-    background-color: #212529;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
 }
 body{
-	font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+	font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
-h1{
-   font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+h2{
+    font-family: 'Poppins', sans-serif;
 }
+
+.carousel-item-fade {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .carousel-item-start {
+    opacity: 1;
+  }
 
 .navbar-brand img {
     width: 120px;
@@ -53,17 +34,30 @@ h1{
 }
 
 .nav-link{
-    font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 
 .background-section {
-    background-image: url('/img/fondo.jpg'); /* Ruta de tu imagen */
+    background-image: url('/img/fondo.jpeg'); /* Ruta de tu imagen */
     background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
     background-position: center; /* Centra la imagen */
     height: 100vh; /* Altura del 100% de la ventana */
+    position: relative; /* Para que los elementos secundarios se posicionen correctamente */
 }
 
+.overlay {
+    position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+    top: 0; /* Colocar en la parte superior del contenedor */
+    left: 0; /* Colocar en la parte izquierda del contenedor */
+    width: 100%; /* Ancho del 100% del contenedor */
+    height: 100%; /* Altura del 100% del contenedor */
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro con transparencia del 50% */
+}
+.sticky-wsp{
+    background-color: transparent;
+}
+    
 
 /* Estilos para las secciones */
 .section {
@@ -123,10 +117,13 @@ h1{
     display: block;
 }
 
-
+a:hover {
+  color: gray; 
+  
+}
 
 .contenido, .text-ref{
-    font-family: proxima_nova_rgbold,Helvetica,sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 3em;
     font-weight: 700;
     letter-spacing: 4px;
@@ -154,6 +151,13 @@ h1{
     height: auto;
 }
 
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+  }
+  
+
 /* Haz que los contenidos sticky ocupen el 100% del ancho en pantallas pequeñas */
 @media (max-width: 768px) {
     .sticky-content,
@@ -162,12 +166,7 @@ h1{
     }
 }
 
-/* Ajusta el tamaño de la fuente para pantallas pequeñas */
-@media (max-width: 576px) {
-    h1 {
-        font-size: 1.5em;
-    }
-}
+
 @media (max-width: 768px) {
     .sticky-section {
         flex-direction: column; /* Cambia la dirección del flexbox a columna */
@@ -194,3 +193,109 @@ h1{
         order: 1; /* Cambia el orden de aparición de las imágenes */
     }
 }
+
+/* Slider marcas */
+@keyframes moveBg {
+    from { background-position: 0 50%; }
+    to { background-position:  -1134px 50%; }
+  }
+  
+/*   .carousel {
+    --blur: 6px;
+    --contrast: 105%;
+    --speed: 13s;
+    height: 250px;
+    width: 100%;
+    position: relative;
+} */
+.bannermarcas{
+    --blur: 6px;
+    --contrast: 105%;
+    --speed: 13s;
+    height: 250px;
+    width: 100%;
+    position: relative;
+}
+    
+    .mask {
+      position: absolute;
+      inset: 0;
+      background: #0000;
+      backdrop-filter: blur(var(--blur)) contrast(var(--contrast));
+      -webkit-backdrop-filter: blur(var(--blur)) contrast(var(--contrast)); /* so it works on Safari */
+      -webkit-mask: linear-gradient(90deg, #000 50px, #0000 175px calc(100% - 175px), #fff calc(100% - 50px));
+      pointer-events: none;
+    }
+  
+    .logos {
+      animation: moveBg var(--speed) linear infinite;
+      position: absolute;
+      inset: 0;
+      background: url(/img/marcas.jpg) 0 50% / 1400px 75px repeat-x;
+      -webkit-mask: linear-gradient(90deg, #0000 5px, #000 50px calc(100% - 50px), #0000 calc(100% - 5px));
+    }
+
+  
+    .footer-divider {
+        border-top: 1px solid #fff; /* Color y grosor de la línea */
+        margin-top: 20px; /* Espacio entre la línea y el contenido anterior */
+    }
+    
+
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        flex: 1;
+    }
+    
+    .footer h4 {
+        font-size: 18px;
+    }
+    
+    .footer p {
+        margin: 10px 0;
+    }
+    
+    .footer ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer ul li {
+        margin-bottom: 5px;
+    }
+    
+    .footer ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .sticky {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 9;
+        background-color: transparent; /* Establece el fondo transparente */
+    }
+    
+    .sticky img {
+        width: 60px;
+    }
+    
